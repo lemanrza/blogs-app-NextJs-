@@ -9,7 +9,7 @@ export default function RootLayout({
         <>
             <div className="flex">
             <Sidebar />
-            <main> {children}</main>
+            <main className="flex-1 ml-64 overflow-y-auto h-screen"> {children}</main>
             </div>
         </>
 

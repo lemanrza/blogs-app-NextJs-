@@ -9,7 +9,7 @@ export default function Sidebar() {
   const isActive = (path: string) => path === pathname;
 
   return (
-    <aside className="h-screen w-64 border-r dark:bg-black bg-white flex flex-col justify-between p-4">
+    <aside className="h-screen w-64 border-r dark:bg-black bg-white flex flex-col fixed left-0 top-0 justify-between p-4">
       <div>
         <h1 className="text-2xl font-bold mb-6">Admin Panel</h1>
 
