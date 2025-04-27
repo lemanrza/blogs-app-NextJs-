@@ -2,12 +2,12 @@
 
 import Link from 'next/link'
 import React from 'react'
-import { ModeToggle } from './ui/mode-toggle'
+import { ModeToggle } from '../ui/mode-toggle'
 
 const ClientHeader = () => {
     return (
         <div className="bg-gray-100 dark:bg-black-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-            <header className="fixed w-full z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg border-b border-gray-300/30 dark:border-gray-700/30 transition-colors duration-300">
+            <header className="sticky w-full z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg border-b border-gray-300/30 dark:border-gray-700/30 transition-colors duration-300">
                 <nav className="container mx-auto px-6 py-3">
                     <div className="flex justify-between items-center">
                         <Link href="/" className="text-2xl font-bold text-primary-light dark:text-primary-dark">

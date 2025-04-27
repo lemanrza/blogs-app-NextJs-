@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientHeader from "@/components/ClientHeader";
+import ClientHeader from "@/components/client/ClientHeader";
 import { ThemeProvider } from "@/components/common/theme-provider";
 
 

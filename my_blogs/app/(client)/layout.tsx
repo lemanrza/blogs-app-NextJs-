@@ -1,15 +1,18 @@
-import ClientHeader from "@/components/ClientHeader";
+import Footer from "@/components/client/Footer";
+import Header from "@/components/client/ClientHeader";
 
-export default function RootLayout({
-    children,
+export default function Layout({
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <>
-            <ClientHeader />
-            <main> {children}</main>
-        </>
-
-    );
+  return (
+    <>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </div>
+    </>
+  );
 }
