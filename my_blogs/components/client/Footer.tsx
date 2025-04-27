@@ -12,8 +12,8 @@ const Footer = () => {
     <div className='flex justify-between p-8 py-10 border border-t-1'>
         <div className='max-w-[300px]'>
             <h3 className='font-bold mb-4'>Modern Blog</h3>
-            <p className='text-xs mb-4'>A modern blog application built with Next.js, Tailwind CSS, and shadcn/ui.</p>
-            <div className='flex gap-1'>
+            <p className='text-sm mb-4'>A modern blog application built with Next.js, Tailwind CSS, and shadcn/ui.</p>
+            <div className='flex gap-5 text-gray-700'>
                 <Twitter size={20}/>
                 <Facebook size={20}/>
                 <Instagram size={20}/>

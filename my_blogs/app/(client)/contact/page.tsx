@@ -55,7 +55,7 @@ const Contact = () => {
         </div>
 
         <div className="flex-1">
-          <Card>
+          <Card className='py-5'>
             <CardHeader>
               <CardTitle className="text-2xl">Send us a message</CardTitle>
               <CardDescription className='text-sm'>
