@@ -19,7 +19,6 @@ export default function  Blogs () {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-//   const blogs= await prisma.blog.findMany()
   useEffect(() => {
     async function fetchBlogs() {
       try {
