@@ -3,8 +3,13 @@
 import Link from 'next/link'
 import React from 'react'
 import { ModeToggle } from '../ui/mode-toggle'
+import { Button } from '../ui/button'
+import LoginPage from '@/app/auth/login/[[...sign-in]]/page'
+import { LogIn, UserPlus } from 'lucide-react'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 const ClientHeader = () => {
+    const { isSignedIn, user } = useUser();
     return (
         <div className="bg-gray-100 dark:bg-black-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
             <header className="sticky w-full z-50 bg-white/30 dark:bg-gray-900/30 backdrop-blur-lg border-b border-gray-300/30 dark:border-gray-700/30 transition-colors duration-300">
@@ -13,7 +18,7 @@ const ClientHeader = () => {
                         <Link href="/" className="text-2xl font-bold text-primary-light dark:text-primary-dark">
                             ModernBlog
                         </Link>
-                        <div className="hidden md:flex space-x-6">
+                        <div className="hidden md:flex space-x-6 items-center">
                             <Link href="/" className="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">
                                 Home
                             </Link>
@@ -26,9 +31,40 @@ const ClientHeader = () => {
                             <Link href="/contact" className="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">
                                 Contact
                             </Link>
-                            <Link href="/admin" className="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">
-                                Admin
+                            {/* 
+                            <Button variant={'outline'}>
+                            <Link href={"/auth/register"} className="hover:text-primary-light dark:hover:text-primary-dark transition-colors duration-300">
+                                Sign-up
                             </Link>
+                            </Button> */}
+                            {isSignedIn ? (
+                                <>
+                                    <UserButton />
+                                </>
+                            ) : (
+                                <>
+                                    <Button>
+
+                                        <Link
+                                            prefetch={true}
+                                            className={`hover:scale-95 transition`}
+                                            href={"/auth/login"}
+                                        >
+                                            Log-in
+                                        </Link>
+                                    </Button>
+
+                                    <Button variant={'outline'}>
+                                        <Link
+                                            prefetch={true}
+                                            className={`hover:scale-95 transition`}
+                                            href={"/auth/register"}
+                                        >
+                                            Sign-up
+                                        </Link>
+                                    </Button>
+                                </>
+                            )}
                         </div>
                         <div className="flex items-center space-x-4">
                             <ModeToggle />
